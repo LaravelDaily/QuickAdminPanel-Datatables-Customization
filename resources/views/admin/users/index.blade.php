@@ -114,11 +114,24 @@
 { data: 'updated_at', name: 'updated_at' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
-    order: [[ 1, 'desc' ]],
+    order: [[ 6, "asc" ]],
     pageLength: 25,
     lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
     lengthChange: false,
     pagingType: "full_numbers",
+    columnDefs: [{
+        orderable: false,
+        className: 'select-checkbox',
+        targets: 0
+    }, {
+        orderable: false,
+        searchable: false,
+        targets: -1
+    },
+    {
+        targets: 6,
+        orderData: [ 6, 2 ]
+    }],
   };
   $('.datatable-User').DataTable(dtOverrideGlobals);
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
