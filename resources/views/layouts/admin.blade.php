@@ -128,13 +128,19 @@
   let colvisButtonTrans = '{{ trans('global.datatables.colvis') }}'
 
   let languages = {
-    'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
+    'en': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json',
+    'es': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
   };
 
   $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })
   $.extend(true, $.fn.dataTable.defaults, {
     language: {
-      url: languages['{{ app()->getLocale() }}']
+      //url: languages.es,
+      lengthMenu: "Display _MENU_ records per page",
+      zeroRecords: "Nothing found - sorry",
+      info: "Showing page _PAGE_ of _PAGES_",
+      infoEmpty: "No records available",
+      infoFiltered: "(filtered from _MAX_ total records)"
     },
     columnDefs: [{
         orderable: false,
