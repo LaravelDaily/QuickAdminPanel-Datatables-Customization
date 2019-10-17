@@ -115,7 +115,10 @@
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     order: [[ 1, 'desc' ]],
-    pageLength: 100,
+    pageLength: 25,
+    lengthMenu: [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+    lengthChange: false,
+    pagingType: "full_numbers",
   };
   $('.datatable-User').DataTable(dtOverrideGlobals);
     $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
