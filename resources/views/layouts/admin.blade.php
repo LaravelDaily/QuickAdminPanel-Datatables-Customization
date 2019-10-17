@@ -153,7 +153,63 @@
     scrollX: true,
     pageLength: 100,
     dom: 'lBfrtip<"actions">',
-    buttons: []
+    buttons: [
+      {
+        extend: 'copy',
+        className: 'btn-default',
+        text: copyButtonTrans,
+        exportOptions: {
+          columns: ':visible'
+        }
+      },
+      {
+        extend: 'csv',
+        className: 'btn-default',
+        text: csvButtonTrans,
+        exportOptions: {
+          columns: [1, 2, 3],
+          format: {
+            body: function ( data, row, column, node ) {
+                return column === 1 ?
+                    data.charAt(0).toUpperCase() + data.slice(1) :
+                    data;
+            }
+          }
+        }
+      },
+      {
+        extend: 'excel',
+        className: 'btn-default',
+        text: excelButtonTrans,
+        exportOptions: {
+          columns: ':visible'
+        }
+      },
+      {
+        extend: 'pdf',
+        className: 'btn-default',
+        text: pdfButtonTrans,
+        exportOptions: {
+          columns: ':visible'
+        }
+      },
+      {
+        extend: 'print',
+        className: 'btn-default',
+        text: printButtonTrans,
+        exportOptions: {
+          columns: ':visible'
+        }
+      },
+      {
+        extend: 'colvis',
+        className: 'btn-default',
+        text: colvisButtonTrans,
+        exportOptions: {
+          columns: ':visible'
+        }
+      }
+    ]
   });
 
   $.fn.dataTable.ext.classes.sPageButton = '';
