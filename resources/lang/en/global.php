@@ -50,7 +50,7 @@ return [
     'youAreLoggedIn'                       => 'You are logged in!',
     'yourAccountNeedsAdminApproval'        => 'Your accounts needs an administrator approval in order to log in',
     'submit'                               => 'Submit',
-    'datatables'                           => [
+    'datatables'                           => [ // Translations in translation file
         'copy'          => 'Copy',
         'csv'           => 'CSV',
         'excel'         => 'Excel',
