@@ -41,6 +41,12 @@
                                     {{ trans('cruds.user.fields.roles') }}
                                 </th>
                                 <th>
+                                    {{ trans('cruds.user.fields.created_at') }}
+                                </th>
+                                <th>
+                                    {{ trans('cruds.user.fields.updated_at') }}
+                                </th>
+                                <th>
                                     &nbsp;
                                 </th>
                             </tr>
@@ -104,6 +110,8 @@
 { data: 'email', name: 'email' },
 { data: 'email_verified_at', name: 'email_verified_at' },
 { data: 'roles', name: 'roles.title' },
+{ data: 'created_at', name: 'created_at' },
+{ data: 'updated_at', name: 'updated_at' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     order: [[ 1, 'desc' ]],

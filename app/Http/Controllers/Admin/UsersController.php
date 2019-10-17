@@ -59,6 +59,13 @@ class UsersController extends Controller
                 return implode(' ', $labels);
             });
 
+            $table->editColumn('created_at', function ($row) {
+                return $row->created_at ? $row->created_at : "";
+            });
+            $table->editColumn('updated_at', function ($row) {
+                return $row->updated_at ? $row->updated_at : "";
+            });
+
             $table->rawColumns(['actions', 'placeholder', 'roles']);
 
             return $table->make(true);
